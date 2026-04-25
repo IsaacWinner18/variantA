@@ -439,7 +439,7 @@ body {
 
 .vc-section {
   margin-top: 26px;
-  background-color: rgb(6, 6, 173);
+  background-color: rgb(3, 3, 96);
   padding: 10px 40px;
   margin-left: 0;
 }
@@ -485,10 +485,11 @@ body {
   align-items: flex-start;
   gap: 10px;
   font-size: 14px;
-  padding: 3px;
+  padding: 6px;
+  border-radius: 6px;
   color: #ffffff;
   line-height: 1.5;
-  background: #1919e4;
+  background: #020274;
 }
 .vc-includes li::before {
   content: "✓";
