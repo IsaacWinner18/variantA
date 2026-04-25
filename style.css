@@ -15,7 +15,14 @@
 
 body {
   margin: 0;
-font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
   font-size: 32px;
   background: #ffffff;
   color: #fff;
@@ -434,7 +441,7 @@ font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, san
   margin-top: 26px;
   background-color: rgb(6, 6, 173);
   padding: 10px 40px;
-  margin-left: 0; 
+  margin-left: 0;
 }
 @media (max-width: 700px) {
   .vc-section {
@@ -482,7 +489,6 @@ font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, san
   color: #ffffff;
   line-height: 1.5;
   background: #1919e4;
-
 }
 .vc-includes li::before {
   content: "✓";
@@ -533,3 +539,106 @@ font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, san
     height: 78px;
   }
 }
+
+.section-label { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--green); margin-bottom: 14px; }
+.section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(32px, 4vw, 58px); letter-spacing: 2px; line-height: 1; margin-bottom: 14px; }
+.section-sub { font-size: 16px; color: var(--muted); line-height: 1.75; max-width: 560px; margin-bottom: 48px; }
+.text-center { text-align: center; }
+.text-center .section-sub { margin-left: auto; margin-right: auto; }
+
+
+/* ─── REVIEWS ─── */
+.reviews-section {
+  background: var(--dark2);
+  margin-top: 50px;
+}
+.reviews-marquee-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.reviews-marquee-wrap::before,
+.reviews-marquee-wrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+.reviews-marquee-wrap::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--dark2), transparent);
+}
+.reviews-marquee-wrap::after {
+  right: 0;
+  background: linear-gradient(-90deg, var(--dark2), transparent);
+}
+.reviews-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: marquee 42s linear infinite;
+}
+.reviews-track:hover {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.review-img-card {
+  flex-shrink: 0;
+  width: 250px;
+  height: 350px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid rgba(0, 230, 118, 0.1);
+  transition:
+    transform 0.3s,
+    border-color 0.3s;
+}
+.review-img-card:hover {
+  transform: scale(1.03);
+  border-color: rgba(0, 230, 118, 0.4);
+}
+.review-img-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cta-btn.large .cta-inner { padding: 14px 2px; color: white; }
+.cta-btn.large .cta-inner span { font-size: 13px; }
+.cta-btn {
+  position: relative; display: inline-flex; align-items: center; justify-content: center;
+  padding: 4px; border-radius: 9999px; border: none; cursor: pointer; text-decoration: none;
+  background: linear-gradient(180deg, rgba(0, 142, 230, 0.35) 0%, rgba(0, 66, 180, 0.85) 100%);
+  box-shadow: inset 0 1px 2px rgba(255,255,255,0.45), inset 0 -1px 2px rgba(0,30,10,0.8), 0 10px 30px rgba(0,0,0,0.55);
+  transition: transform 0.2s, box-shadow 0.2s; white-space: nowrap;
+}
+.cta-btn:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 15px 40px rgba(0,230,118,0.3); }
+.cta-btn:active { transform: scale(0.98); }
+.cta-inner {
+  position: relative; display: flex; align-items: center; justify-content: center;
+  gap: 8px; padding: 13px 28px; border-radius: 9999px;
+  background: linear-gradient(90deg, #092cdb 0%, #2b65ec 55%, #1975ec 100%);
+  box-shadow: inset 0 8px 12px rgba(255,255,255,0.35), inset 0 -5px 10px rgba(0,150,60,0.35);
+  overflow: hidden;
+}
+.cta-inner::before {
+  content: ''; position: absolute; top: 4px; left: 16px; right: 16px; height: 40%;
+  border-radius: 9999px; background: linear-gradient(180deg, white 0%, transparent 100%); opacity: 0.4;
+}
+.cta-inner span {
+  font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 10px;
+  letter-spacing: 0.3px; color: #ffffff; position: relative; z-index: 1;
+}
+.cta-inner svg { position: relative; z-index: 1; flex-shrink: 0; color: #000; }
+
+
